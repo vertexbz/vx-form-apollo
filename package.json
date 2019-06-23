@@ -1,0 +1,56 @@
+{
+  "name": "vx-form-apollo",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "VX React form engine apollo bindings",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "npm": ">=6.0",
+    "yarn": "^1.0"
+  },
+  "dependencies": {
+    "hoist-non-react-statics": "^3.3.0",
+    "vx-form": ">=0.1.2"
+  },
+  "peerDependencies": {
+    "apollo-client": ">=2.6.3",
+    "graphql": ">=14.3.1",
+    "react": ">=16.8",
+    "react-apollo": "^3.0.0-beta.2 || ^3.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc",
+    "prepare": "yarn build && yarn docs",
+    "lint": "tslint --project tsconfig.json --format codeFrame",
+    "test": "jest -c ./jest.config.js",
+    "docs": "typedoc -p . --theme default --target 'es6' --excludeNotExported --exclude ./src/index.tsx --excludePrivate --ignoreCompilerErrors --out docs src/"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.2.1",
+    "@types/hoist-non-react-statics": "^3.3.1",
+    "@types/jest": "24.0.15",
+    "@types/react": "^16.8.22",
+    "apollo-client": ">=2.6.3",
+    "jest": "^24.8.0",
+    "react": ">=16.8",
+    "react-apollo": "^3.0.0-beta.2 || ^3.0.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "tsc": "^1.20150623.0",
+    "tslib": "1.9.3",
+    "tslint": "5.12.0",
+    "tslint-config-standard": "8.0.1",
+    "tslint-etc": "1.2.12",
+    "typedoc": "^0.14.2",
+    "typescript": "3.2.2",
+    "typescript-tslint-plugin": "0.2.1"
+  },
+  "files": [
+    "dist"
+  ]
+}
